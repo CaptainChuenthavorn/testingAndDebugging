@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
 int main()
@@ -10,8 +11,8 @@ int main()
 	if (determinant > 0)
 	{
 		// sqrt() function returns square root
-		root1 = -b + sqrt(determinant) / 2 * a;
-		root2 = -b - sqrt(determinant) / 2 * a;
+		root1 = (-b + sqrt(determinant)) / (2 * a); // add (2*a) and (-b +sqrt...)
+		root2 = (-b - sqrt(determinant)) / (2 * a); // add (2*a) and (-b +sqrt...)
 		printf("root1 = %.2lf and root2 = %.2lf", root1, root2); // (#2)
 	}
 	//condition for real and equal roots
@@ -23,8 +24,8 @@ int main()
 	// if roots are not real
 	else
 	{
-		realPart = -b / 2 * a;
-		imaginaryPart = sqrt(-determinant) / 2 * a;
+		realPart = -b / (2 * a); // add (2*a) 
+		imaginaryPart = sqrt(-determinant) / (2 * a); // add (2*a)
 		printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imaginaryPart,
 			realPart, imaginaryPart); // (#4)
 	}
